@@ -7,14 +7,14 @@ import styles from "./PostCard.module.css"
 
 // Components
 import Link from "next/link";
-import PlayButton from "../PlayButton/PlayButton";
 
-export default function PostCardTrend({ index, title, category, thumbnail_featured, link, video_field, date }: PostType): JSX.Element {
+export default function PostCardTrend({ index, title, category, thumbnail_featured, link, date }: PostType): JSX.Element {
   const inlineStyles = {
-    backgroundImage: `url(${thumbnail_featured})`,
+    backgroundImage: `url("${thumbnail_featured}")`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-  }
+  } as React.CSSProperties;
+
   return (
     <Link href={link} className={styles.trendLink}>
       <article className={styles.trendContainer}>
