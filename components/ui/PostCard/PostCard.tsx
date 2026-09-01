@@ -50,6 +50,7 @@ export default function PostCard({
             height={180}
             sizes="(max-width: 768px) 100vw, 768px"
             loading="eager"
+            unoptimized
             // style={{ objectFit: 'cover' }}
             // fill
           />

@@ -35,6 +35,7 @@ export default function PostImage({ imageUrl, imageAlt, videoUrl }: { imageUrl: 
           width={780}
           height={500}
           alt={imageAlt}
+          unoptimized
         />
       )}
 

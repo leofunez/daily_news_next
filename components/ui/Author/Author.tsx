@@ -18,6 +18,7 @@ export default function Author({ photo, name, slug }: AuthorType): JSX.Element {
         height={96}
         width={96}
         alt={name}
+        unoptimized
       />
       {name}
     </Link>
