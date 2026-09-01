@@ -40,6 +40,7 @@
 .imageContainer {
     position: relative;
     overflow: hidden;
+    background-color: var(--color-border);
 }
 
 .imageContainerSmall {

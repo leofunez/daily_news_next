@@ -41,18 +41,17 @@ export default function PostCard({
         >
           <Image
             className={`
-              ${isSmall ? styles.imageSmall : styles.image}
+              ${styles.image}
+              ${isSmall ? styles.imageSmall : ''}
               ${isHorizontal ? styles.imageHorizontal : ''}
             `}
             src={thumbnail_featured}
             alt={title}
             width={300}
-            height={180}
+            height={160}
             sizes="(max-width: 768px) 100vw, 768px"
             loading="eager"
             unoptimized
-            // style={{ objectFit: 'cover' }}
-            // fill
           />
 
           {!hideImage && video_field && (
