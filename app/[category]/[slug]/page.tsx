@@ -16,7 +16,7 @@ import MinsRead from "@/components/ui/MinsRead/MinsRead";
 import RelatedPosts from "@/components/sections/RelatedPosts/RelatedPosts";
 import Divider from "@/components/ui/Divider/Divider";
 import Tags from "@/components/ui/Tags/Tags";
-import PostImage from "@/components/ui/PostImage/PostImage";
+import PostDetailImage from "@/components/ui/PostDetailImage/PostDetailImage";
 
 export default async function PostDetailPage({ params }: PageProps): Promise<JSX.Element> {
   const { category, slug } = await params;
@@ -82,7 +82,7 @@ export default async function PostDetailPage({ params }: PageProps): Promise<JSX
         </div>
 
         {postImages[0]?.source_url && (
-          <PostImage
+          <PostDetailImage
             imageUrl={postImages[0].source_url}
             imageAlt={postTitle}
             videoUrl={postVideoUrl}
