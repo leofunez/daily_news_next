@@ -13,9 +13,6 @@ import styles from "./Navigation.module.css";
 // Components
 import Link from "next/link";
 
-// Constants
-import { MAIN_URL } from "@/constants";
-
 export default function Navigation({ isSmall, items }: { isSmall?: boolean, items: MenuType[] }): JSX.Element {
   const pathname = usePathname();
 
