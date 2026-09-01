@@ -22,7 +22,7 @@ export default function Navigation({ isSmall, items }: { isSmall?: boolean, item
   return (
     <nav className={styles.menu}>
       {items.map((item: MenuType) => {
-        const pathForHref = `/${item.title.toLowerCase().replace(" ", "-")}`;
+        const pathForHref = item.title !== "Home" ? `/${item.title.toLowerCase().replace(" ", "-")}` : "/";
         const pathToValidate = pathForHref.replaceAll("/", "");
         const pathNameWord = pathname?.split('/')?.[1];
         const isActive = pathToValidate === pathNameWord;
