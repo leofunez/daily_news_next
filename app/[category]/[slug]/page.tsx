@@ -4,7 +4,7 @@ import fetchWebApi from "@/api/fetchWebApi";
 // Types
 import type { JSX } from "react";
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ category: string; slug: string }>;
 }
 
 // Components
@@ -19,7 +19,7 @@ import Tags from "@/components/ui/Tags/Tags";
 import PostImage from "@/components/ui/PostImage/PostImage";
 
 export default async function PostDetailPage({ params }: PageProps): Promise<JSX.Element> {
-  const {slug} = await params;
+  const { category, slug } = await params;
   const [postDetail] = await fetchWebApi.getPostDetail(slug);
   const {
     date,
