@@ -33,5 +33,6 @@
 .offset {
     display: flex;
     gap: 40px;
-    width: calc(calc(300px * 12) + 440px);
+    transition: transform 0.4s ease;
+    will-change: transform;
 }
