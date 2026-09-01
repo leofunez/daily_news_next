@@ -33,7 +33,7 @@ const fetchWebApi = {
     },
 
     async getHomeSecondList(): Promise<PostType[]> {
-      return await postsFetcher('posts', 8, 10);
+      return await postsFetcher('posts', 12, 10); // 8, 10
     },
 
     async getHomeThirdList(): Promise<PostType[]> {
@@ -41,7 +41,7 @@ const fetchWebApi = {
     },
 
     async getHomeFourthList(): Promise<PostType[]> {
-      return await postsFetcher('posts', 8, 25);
+      return await postsFetcher('posts', 12, 21); // 8, 25
     },
 
     async getTendingPosts() {
@@ -62,9 +62,13 @@ const fetchWebApi = {
 
     async getCategoryPosts(id: number, per_page: number, offset: number = 0) {
       return await postsFetcher(`posts?categories=${id}`, per_page, offset);
-    },
+  },
 
-    async getAllCategories() {
+  async getRelatedPosts(category_id: number, post_id: number) {
+    return await postsFetcher(`posts?categories=${category_id}&exclude=${post_id}`, 4, 0);
+  },
+
+  async getAllCategories() {
       const allItems = await fetch(`${baseURL}categories?per_page=20`);
       return allItems.json();
     },
