@@ -16,6 +16,7 @@ export default async function Home() {
   const secondList = await fetchWebApi.getHomeSecondList();
   const thirdList = await fetchWebApi.getHomeThirdList();
   const fourthList = await fetchWebApi.getHomeFourthList();
+  const trendingPosts = await fetchWebApi.getTendingPosts();
 
   return (
     <>
@@ -33,7 +34,7 @@ export default async function Home() {
 
           <Divider />
 
-          <MostPopular />
+          <MostPopular posts={trendingPosts} />
 
           <Divider />
 
