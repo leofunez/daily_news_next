@@ -19,9 +19,10 @@ import Tags from "@/components/ui/Tags/Tags";
 import PostDetailImage from "@/components/ui/PostDetailImage/PostDetailImage";
 
 export default async function PostDetailPage({ params }: PageProps): Promise<JSX.Element> {
-  const { category, slug } = await params;
+  const { slug } = await params;
   const [postDetail] = await fetchWebApi.getPostDetail(slug);
   const {
+    id: postId,
     date,
     title: {
       rendered: postTitle
@@ -99,7 +100,7 @@ export default async function PostDetailPage({ params }: PageProps): Promise<JSX
         <Divider />
 
         {postCategories?.[0]?.id && (
-          <RelatedPosts categoryId={postCategories[0].id} />
+          <RelatedPosts categoryId={postCategories[0].id} postId={postId} />
         )}
       </div>
     </main>
