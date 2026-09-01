@@ -47,11 +47,8 @@ export default async function Footer(): Promise<JSX.Element> {
             <a href="https://www.instagram.com" title="Instagram" target="_blank">
               <IconSocial name='Instagram' size={30} />
             </a>
-            <a href="https://www.linkedin.com" title="LinkedIn" target="_blank">
-              <IconSocial name='LinkedIn' size={24} />
-            </a>
             <a href="https://www.youtube.com" title="YouTube" target="_blank">
-              <IconSocial name='YouTube' size={30} />
+              <IconSocial name='YouTube' size={32} />
             </a>
           </div>
 
