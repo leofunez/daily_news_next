@@ -14,8 +14,8 @@ import GridList from "../GridList/GridList";
 // Constants
 import { RELATED_POSTS } from "@/constants";
 
-export default async function RelatedPosts({ categoryId }:{ categoryId:number }): Promise<JSX.Element> {
-  const posts = await fetchWebApi.getCategoryPosts(categoryId, 4);
+export default async function RelatedPosts({ categoryId, postId }:{ categoryId: number, postId: number }): Promise<JSX.Element> {
+  const posts = await fetchWebApi.getRelatedPosts(categoryId, postId);
 
   if (posts.length <= 0) return <></>
 
