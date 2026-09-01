@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.iconList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.readTime {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action {
+    border: none;
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.action:hover {
+    background-color: var(--color-border);
+}
+
+.actionText {
+    font-weight: 500;
+    font-size: 12px;
+    font-family: var(--font-roboto-condensed);
+    letter-spacing: -0.4px;
+    text-transform: uppercase;
+}

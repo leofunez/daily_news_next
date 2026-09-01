@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text {
+    font-family: var(--font-roboto-condensed);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+
+    @media (min-width: 740px) {
+        font-size: 18px;
+    }
+}
+
+.icon {
+    font-size: 30px;
+    height: 16px;
+    line-height: 4px;
+    height: max-content;
+}

@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+}
+
+.text {
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: -2px;
+    font-family: var(--font-prata), 'Times New Roman', Times, serif;
+
+    @media (min-width: 740px) {
+        font-size: 50px;
+    }
+}
+
+.mid {
+    font-size: 30px;
+
+    @media (min-width: 740px) {
+        font-size: 40px;
+    }
+}
+
+.small {
+    font-size: 30px;
+}

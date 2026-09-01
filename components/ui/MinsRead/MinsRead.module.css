@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    @media (min-width: 740px) {
+        font-size: 14px;
+    }
+}

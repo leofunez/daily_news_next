@@ -1,0 +1,33 @@
+.container {
+    background-color: var(--color-white);
+    border-radius: 0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 10px solid var(--color-darkest); /* Change color here */
+        display: inline-block;
+    }
+}
+
+.isLarge {
+    height: 65px;
+    width: 65px;
+
+    &:before {
+        border-width: 9px 0 9px 13px;
+    }
+}

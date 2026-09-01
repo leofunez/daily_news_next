@@ -1,0 +1,33 @@
+.page {
+    max-width: 980px;
+    margin: 40px auto;
+
+    .title {
+        font-size: 20px;
+        margin-bottom: 20px;
+
+        @media (min-width: 740px) {
+            font-size: 26px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .body {
+        h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            &:not(:last-of-type) {
+                margin-bottom: 40px;
+            }
+        }
+
+        hr {
+            margin-bottom: 40px;
+            border-color: var(--color-border);
+            opacity: 0.2;
+        }
+    }
+}

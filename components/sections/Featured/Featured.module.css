@@ -1,0 +1,41 @@
+.container{
+    display: grid;
+    gap: 40px;
+    margin-bottom: 80px;
+
+    @media (min-width: 740px) {
+        grid-template-columns: auto;
+        grid-template-columns: auto 300px;
+        grid-template-areas: "main list";
+    }
+}
+
+.leftContainer {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: auto;
+    grid-auto-flow: row dense;
+
+    @media (min-width: 999px) {
+        grid-area: main;
+        grid-template-columns: auto 300px;
+        grid-template-rows: repeat(4, auto);
+        gap: 0 40px;
+    }
+}
+
+.middleContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (min-width: 740px) {
+        grid-area: list;
+    }
+}

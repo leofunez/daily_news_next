@@ -1,0 +1,148 @@
+.postCard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.postCardHorizontal {
+    flex-direction: row;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.featuredTitle {
+    font-size: 20px;
+
+    @media (min-width: 740px) {
+        font-size: 24px;
+    }
+}
+
+.listTitle {
+    font-size: 16px;
+}
+
+.listTitleSmall {
+    font-size: 14px;
+}
+
+.dateTime {
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+.imageContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.imageContainerSmall {
+    height: 100px;
+    width: 100px;
+    max-height: 100px;
+    min-width: 100px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    float: left;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.imageHorizontal {
+    width: 200px;
+    height: auto;
+}
+
+.imageSmall{
+    height: 100%;
+    width: auto;
+    position: relative;
+    left: -45%;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Trends */
+.trendLink {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    max-width: 300px;
+    display: block;
+    overflow: hidden;
+}
+
+.trendCounter {
+    font-family: var(--font-prata);
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--color-white);
+    margin-bottom: 10px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 1;
+}
+
+.trendInfo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+}
+
+.trendLink:after {
+    content: "";
+    background-image: linear-gradient(transparent, var(--color-darkest));
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.trendImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.trendTitle {
+    font-size: 17px;
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.trendCategory {
+    color: var(--color-white);
+}
+
+.trendDate {
+    color: var(--color-white);
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.trendFooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* .Trends */

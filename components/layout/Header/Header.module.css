@@ -1,0 +1,65 @@
+.container {
+    border-bottom: 1px solid var(--color-darkest);
+}
+
+.headerTop {
+    background-color: var(--color-darker);
+    color: var(--color-white);
+    height: 30px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.dateTime {
+    color: var(--color-white);
+    opacity: 0.8;
+}
+
+.actions {
+    display: flex;
+    gap: 20px;
+}
+
+.headerMiddle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuButton,
+.search {
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--color-border);
+    }
+}
+
+.middleMenu {
+    display: none;
+
+    @media (min-width: 980px) {
+        display: block;
+    }
+}

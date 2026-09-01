@@ -1,0 +1,28 @@
+.featuredContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 40px;
+    margin-top: 20px;
+
+    @media (min-width: 999px) {
+        flex-direction: row;
+    }
+}
+
+.listPosts {
+    display: grid;
+    gap: 40px;
+
+    @media (min-width: 999px) {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        width: 640px;
+        min-width: 640px;
+    }
+}
+
+.listPostCard {
+    @media (min-width: 740px) {
+        flex-basis: 300px;
+    }
+}
