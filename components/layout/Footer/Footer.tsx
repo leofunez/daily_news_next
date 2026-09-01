@@ -39,16 +39,16 @@ export default async function Footer(): Promise<JSX.Element> {
 
           <div className={styles.social}>
             <a href="https://www.facebook.com" title="Facebook" target="_blank">
-              <IconSocial name='Facebook' size={24} />
+              <IconSocial name='Facebook' size={22} />
             </a>
             <a href="https://www.x.com" title="X" target="_blank">
-              <IconSocial name='Twitter' size={30} />
+              <IconSocial name='Twitter' size={26} />
             </a>
             <a href="https://www.instagram.com" title="Instagram" target="_blank">
-              <IconSocial name='Instagram' size={30} />
+              <IconSocial name='Instagram' size={26} />
             </a>
             <a href="https://www.youtube.com" title="YouTube" target="_blank">
-              <IconSocial name='YouTube' size={32} />
+              <IconSocial name='YouTube' size={30} />
             </a>
           </div>
 
