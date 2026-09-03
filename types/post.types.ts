@@ -29,4 +29,12 @@ export interface PostResponseType {
     video_url: string;
     subtitle: string;
   };
+
+  // Favorites
+  _links?: {
+    "wp:featuredmedia": [{
+      href: string
+    }];
+  };
+  categories?: number[]
 }

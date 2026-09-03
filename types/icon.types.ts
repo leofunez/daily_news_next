@@ -1,4 +1,5 @@
 export interface IconType {
   size?: number,
-  color?: string
+  color?: string,
+  isActive?: boolean,
 }
