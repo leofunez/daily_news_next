@@ -2,6 +2,9 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
+// Provider
+import { Providers } from "@/redux/providers";
+
 // Fonts
 import { Roboto, Roboto_Condensed, Prata, Merriweather, Literata } from "next/font/google";
 
@@ -68,9 +71,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
       ${literataFont.variable}
     `}>
       <body>
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+            {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
