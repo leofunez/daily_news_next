@@ -108,6 +108,10 @@ a {
     }
 }
 
+.page-content {
+    margin: 20px 0;
+}
+
 .linkText {
     background-image: linear-gradient(90deg, var(--color-darkest), var(--color-darkest));
     background-size: 0 1px;
