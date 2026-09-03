@@ -5,7 +5,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { PostResponseType, PostType } from "@/types/post.types";
 
 // Helpers
-import { postsFavShaper } from "@/helpers/postsShaper";
+import postsShaper from "@/helpers/postsShaper";
 
 export const favoritesApi = createApi({
   reducerPath: 'favoritesAPI',
@@ -18,10 +18,11 @@ export const favoritesApi = createApi({
         url: 'posts',
         params: {
           include: ids.join(','),
+          _embed: 'true'
         }
       }),
       transformResponse: async (response: PostResponseType[]): Promise<PostType[]> => {
-        return await postsFavShaper(response);
+        return await postsShaper(response);
       }
     })
   })

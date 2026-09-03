@@ -7,7 +7,7 @@ import type { PageType } from "@/types/page.types";
 
 // Helpers
 import postsFetcher from "@/helpers/postsFetcher";
-import { postsFavShaper } from "@/helpers/postsShaper";
+import postsShaper from "@/helpers/postsShaper";
 
 const baseURL = `${MAIN_URL}/wp-json/wp/v2/`;
 
@@ -110,7 +110,7 @@ const fetchWebApi = {
 
     const results = await fetch(`/api/posts?include=${ids.join(',')}`);
     const jsonResults = await results.json();
-    const posts: PostType[] = await postsFavShaper(jsonResults);
+    const posts: PostType[] = await postsShaper(jsonResults);
 
     return posts;
   },
