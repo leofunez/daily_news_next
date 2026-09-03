@@ -13,6 +13,9 @@ import styles from "./Navigation.module.css";
 // Components
 import Link from "next/link";
 
+// Constants
+import { FAVORITES } from "@/constants";
+
 export default function Navigation({ isSmall, items }: { isSmall?: boolean, items: MenuType[] }): JSX.Element {
   const pathname = usePathname();
 
@@ -37,6 +40,15 @@ export default function Navigation({ isSmall, items }: { isSmall?: boolean, item
           </Link>
         )
       })}
+      <Link
+        href={'/favorites'}
+        className={`
+          ${styles.menuItem}
+          ${pathname === '/favorites' ? styles.isActive : ''}
+        `}
+      >
+        {FAVORITES}
+      </Link>
     </nav>
   )
 }
