@@ -1,3 +1,10 @@
+"use client";
+
+// Store
+import { useSelector } from "react-redux";
+import { useAppDispatch } from "@/redux/hooks";
+import { setFavorite, selectFavorites } from "@/redux/slices/favoritesSlice";
+
 // Types
 import type { JSX } from "react";
 
@@ -12,7 +19,10 @@ import IconShare from "@/components/icons/IconShare";
 import IconEmail from "@/components/icons/IconEmail";
 import IconLink from "@/components/icons/IconLink";
 
-export default function PostAction(): JSX.Element {
+export default function PostAction({ postId }: { postId: number }): JSX.Element {
+  const storeFavorites = useSelector(selectFavorites);
+  const storeDispatch = useAppDispatch();
+
   return (
     <div className={styles.container}>
       <div className={`${styles.iconList} ${styles.right}`}>
@@ -31,8 +41,12 @@ export default function PostAction(): JSX.Element {
           <IconPrint />
         </button>
 
-        <button className={styles.action}>
-          <IconBookmark />
+        <button className={styles.action} onClick={() => {
+          storeDispatch(setFavorite(postId));
+        }}>
+          <IconBookmark
+            isActive={storeFavorites.includes(postId)}
+          />
         </button>
 
         <button className={styles.action}>
