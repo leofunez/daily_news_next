@@ -7,6 +7,7 @@ import type { PageType } from "@/types/page.types";
 
 // Helpers
 import postsFetcher from "@/helpers/postsFetcher";
+import { postsFavShaper } from "@/helpers/postsShaper";
 
 const baseURL = `${MAIN_URL}/wp-json/wp/v2/`;
 
@@ -62,13 +63,13 @@ const fetchWebApi = {
 
     async getCategoryPosts(id: number, per_page: number, offset: number = 0) {
       return await postsFetcher(`posts?categories=${id}`, per_page, offset);
-  },
+    },
 
-  async getRelatedPosts(category_id: number, post_id: number) {
-    return await postsFetcher(`posts?categories=${category_id}&exclude=${post_id}`, 4, 0);
-  },
+    async getRelatedPosts(category_id: number, post_id: number) {
+      return await postsFetcher(`posts?categories=${category_id}&exclude=${post_id}`, 4, 0);
+    },
 
-  async getAllCategories() {
+    async getAllCategories() {
       const allItems = await fetch(`${baseURL}categories?per_page=20`);
       return allItems.json();
     },
@@ -102,6 +103,18 @@ const fetchWebApi = {
           return await postsFetcher(`posts?tag=${id}`, per_page, offset);
       },
   // .Tag
+
+  // Posts by Ids
+  async getPostsByIds(ids: number[]): Promise<PostType[]> {
+    if (ids.length <= 0) return [];
+
+    const results = await fetch(`/api/posts?include=${ids.join(',')}`);
+    const jsonResults = await results.json();
+    const posts: PostType[] = await postsFavShaper(jsonResults);
+
+    return posts;
+  },
+  // .Posts by Ids
 
   // Page
       async getPage(slug: string): Promise<PageType> {
