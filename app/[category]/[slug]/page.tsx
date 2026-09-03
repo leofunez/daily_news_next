@@ -78,7 +78,7 @@ export default async function PostDetailPage({ params }: PageProps): Promise<JSX
               />
             )}
 
-            <PostAction />
+            <PostAction postId={postId} />
           </div>
         </div>
 
