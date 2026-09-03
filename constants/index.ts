@@ -14,6 +14,10 @@ export const PRIVACY_POLICY = "Privacy Policy";
 export const TERMS_OF_SERVICE = "Terms of Service";
 export const TERMS_OF_SALES = "Terms of Sales";
 export const CONTACT_US = "Contact Us";
+export const FAVORITES = "Favorites";
+export const FAVORITES_LOADING = "Loading your favorite posts...";
+export const FAVORITES_ERROR = "Failed to load favorite posts.";
+export const FAVORITES_NO = "You have no favorite posts saved.";
 
 export const COLORS = {
     white:    "#FFFFFF",
