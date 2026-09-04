@@ -14,6 +14,8 @@ import fetchWebApi from "@/api/fetchWebApi";
 import GridList from "@/components/sections/GridList/GridList";
 import SearchForm from "@/components/ui/SearchForm/SearchForm";
 
+export const dynamic = 'force-dynamic';
+
 export default async function SearchPage({ searchParams }: SearchParamsType): Promise<JSX.Element> {
   const params = await searchParams;
   const searchQuery = params.s?.replace(/['"]/g, "").trim() || "";
