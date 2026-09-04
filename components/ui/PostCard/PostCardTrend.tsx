@@ -7,23 +7,20 @@ import styles from "./PostCard.module.css"
 
 // Components
 import Link from "next/link";
-import Image from "next/image";
+import PlayButton from "../PlayButton/PlayButton";
 
-export default function PostCardTrend({ index, title, category, thumbnail_featured, link, date }: PostType): JSX.Element {
+export default function PostCardTrend({ index, title, category, thumbnail_featured, link, video_field, date }: PostType): JSX.Element {
+  const inlineStyles = {
+    backgroundImage: `url(${thumbnail_featured})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }
   return (
     <Link href={link} className={styles.trendLink}>
       <article className={styles.trendContainer}>
 
         {thumbnail_featured && (
-          <div className={styles.trendImage}>
-            <Image
-              src={thumbnail_featured}
-              alt={title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 20vw"
-              className={styles.trendImageFill}
-            />
-          </div>
+          <div style={inlineStyles} className={styles.trendImage}></div>
         )}
 
         {index && (
