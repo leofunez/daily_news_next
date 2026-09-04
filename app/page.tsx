@@ -11,12 +11,21 @@ import MostPopular from "@/components/sections/MostPopular/MostPopular";
 import Divider from "@/components/ui/Divider/Divider";
 
 export default async function Home() {
-  const featuredPosts = await fetchWebApi.getHomeFeatured();
-  const mainList = await fetchWebApi.getHomeMainList();
-  const secondList = await fetchWebApi.getHomeSecondList();
-  const thirdList = await fetchWebApi.getHomeThirdList();
-  const fourthList = await fetchWebApi.getHomeFourthList();
-  const trendingPosts = await fetchWebApi.getTendingPosts();
+  const [
+    featuredPosts,
+    mainList,
+    secondList,
+    thirdList,
+    fourthList,
+    trendingPosts
+  ] = await Promise.all([
+    fetchWebApi.getHomeFeatured(),
+    fetchWebApi.getHomeMainList(),
+    fetchWebApi.getHomeSecondList(),
+    fetchWebApi.getHomeThirdList(),
+    fetchWebApi.getHomeFourthList(),
+    fetchWebApi.getTendingPosts()
+  ]);
 
   return (
     <>
