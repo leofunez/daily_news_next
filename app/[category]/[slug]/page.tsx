@@ -18,6 +18,8 @@ import Divider from "@/components/ui/Divider/Divider";
 import Tags from "@/components/ui/Tags/Tags";
 import PostDetailImage from "@/components/ui/PostDetailImage/PostDetailImage";
 
+export const dynamic = 'force-dynamic';
+
 export default async function PostDetailPage({ params }: PageProps): Promise<JSX.Element> {
   const { slug } = await params;
   const [postDetail] = await fetchWebApi.getPostDetail(slug);
