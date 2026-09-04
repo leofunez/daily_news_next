@@ -34,9 +34,14 @@ export default function DateTimeWeather(): JSX.Element {
         const res = await fetch(
           'https://api.open-meteo.com/v1/forecast?latitude=4.7110&longitude=-74.0721&current_weather=true'
         );
+
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
         const data = await res.json();
-        const temp = Math.round(data.current_weather.temperature);
-        temperatureString = `Bogotá ${temp}°C`;
+        if (data.current_weather?.temperature !== undefined) {
+          const temp = Math.round(data.current_weather.temperature);
+          temperatureString = `Bogotá ${temp}°C`;
+        }
       } catch (error) {
         console.error("Failed to fetch weather data:", error);
       }
