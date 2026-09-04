@@ -26,13 +26,35 @@
 }
 
 .slide {
-    overflow: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     margin-top: 20px;
+    padding-bottom: 10px; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch;
+    
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-.offset {
+.track {
     display: flex;
     gap: 40px;
-    transition: transform 0.4s ease;
-    will-change: transform;
+    padding: 0 10px 10px;
+}
+
+.track > * {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+}
+
+/* Responsive: mobile shows 1 item at a time */
+@media (max-width: 768px) {
+    .track > * {
+        flex: 0 0 calc(100% - 20px);
+    }
 }
