@@ -11,18 +11,6 @@ const nextConfig: NextConfig = {
   },
   images: {
     domains: ['dev-today-news.pantheonsite.io', 'secure.gravatar.com'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'dev-today-news.pantheonsite.io',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'secure.gravatar.com',
-        pathname: '/**',
-      }
-    ],
   },
 };
 
