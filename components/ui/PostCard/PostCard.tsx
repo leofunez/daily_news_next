@@ -47,11 +47,11 @@ export default function PostCard({
             `}
             src={thumbnail_featured}
             alt={title}
-            width={300}
-            height={160}
-            sizes="(max-width: 768px) 100vw, 768px"
-            loading="eager"
-            unoptimized
+            width={600}
+            height={320}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            loading={isFeatured ? "eager" : "lazy"}
+            priority={isFeatured}
           />
 
           {!hideImage && video_field && (
