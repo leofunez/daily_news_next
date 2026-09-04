@@ -14,12 +14,12 @@ const baseURL = `${MAIN_URL}/wp-json/wp/v2/`;
 const fetchWebApi = {
   // Menu
     async getHeaderMenu() {
-      const response = await fetch(`${baseURL}menu-header`);
+      const response = await fetch(`${baseURL}menu-header`, { cache: 'no-store' });
       return response.json();
     },
 
     async getFooterMenu() {
-      const response = await fetch(`${baseURL}menu-footer`);
+      const response = await fetch(`${baseURL}menu-footer`, { cache: 'no-store' });
       return response.json();
     },
   // .Menu
@@ -52,12 +52,12 @@ const fetchWebApi = {
 
   // Category
     async getCategoryInfo(slug: string) {
-        const response = await fetch(`${baseURL}categories?slug=${slug}`);
+        const response = await fetch(`${baseURL}categories?slug=${slug}`, { cache: 'no-store' });
         return response.json();
     },
 
     async getCategoryById(id: number) {
-        const response = await fetch(`${baseURL}categories/${id}`);
+        const response = await fetch(`${baseURL}categories/${id}`, { cache: 'no-store' });
         return response.json();
     },
 
@@ -70,14 +70,14 @@ const fetchWebApi = {
     },
 
     async getAllCategories() {
-      const allItems = await fetch(`${baseURL}categories?per_page=20`);
+      const allItems = await fetch(`${baseURL}categories?per_page=20`, { cache: 'no-store' });
       return allItems.json();
     },
   // .Category
 
   // Post
     async getPostDetail(slug: string) {
-      const response = await fetch(`${baseURL}posts?slug=${slug}&_embed`);
+      const response = await fetch(`${baseURL}posts?slug=${slug}&_embed`, { cache: 'no-store' });
       return response.json();
     },
   // .Post
@@ -90,12 +90,12 @@ const fetchWebApi = {
 
   // Tag
       async getTagInfo(slug: string) {
-          const response = await fetch(`${baseURL}tags/?slug=${slug}`);
+          const response = await fetch(`${baseURL}tags/?slug=${slug}`, { cache: 'no-store' });
           return response.json();
       },
 
       async getTagInfoById(id: number) {
-          const response = await fetch(`${baseURL}tags/${id}`);
+          const response = await fetch(`${baseURL}tags/${id}`, { cache: 'no-store' });
           return response.json();
       },
 
@@ -108,7 +108,7 @@ const fetchWebApi = {
   async getPostsByIds(ids: number[]): Promise<PostType[]> {
     if (ids.length <= 0) return [];
 
-    const results = await fetch(`/api/posts?include=${ids.join(',')}`);
+    const results = await fetch(`/api/posts?include=${ids.join(',')}`, { cache: 'no-store' });
     const jsonResults = await results.json();
     const posts: PostType[] = await postsShaper(jsonResults);
 
@@ -118,7 +118,7 @@ const fetchWebApi = {
 
   // Page
       async getPage(slug: string): Promise<PageType> {
-        const response = await fetch(`${baseURL}pages?slug=${slug}&_embed`);
+        const response = await fetch(`${baseURL}pages?slug=${slug}&_embed`, { cache: 'no-store' });
         const responseJSON = await response.json();
         return responseJSON[0];
       },
