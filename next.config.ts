@@ -16,10 +16,12 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'dev-today-news.pantheonsite.io',
+        pathname: '/wp-content/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: 'secure.gravatar.com'
+        hostname: 'secure.gravatar.com',
+        pathname: '/avatar/**',
       }
     ],
   },
