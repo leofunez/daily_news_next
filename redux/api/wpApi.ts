@@ -186,7 +186,7 @@ export const wpApi = createApi({
         if (ids.length <= 0) return { data: [] };
 
         try {
-          const results = await fetch(`/api/posts?include=${ids.join(',')}`, { cache: 'no-store' });
+          const results = await fetch(`/api/posts?include=${ids.join(',')}&_embed=true`, { cache: 'no-store' });
           const jsonResults: PostResponseType[] = await results.json();
           const posts: PostType[] = await postsShaper(jsonResults);
           return { data: posts };

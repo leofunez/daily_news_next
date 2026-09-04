@@ -108,7 +108,7 @@ const fetchWebApi = {
   async getPostsByIds(ids: number[]): Promise<PostType[]> {
     if (ids.length <= 0) return [];
 
-    const results = await fetch(`/api/posts?include=${ids.join(',')}`, { cache: 'no-store' });
+    const results = await fetch(`/api/posts?include=${ids.join(',')}&_embed=true`, { cache: 'no-store' });
     const jsonResults = await results.json();
     const posts: PostType[] = await postsShaper(jsonResults);
 
