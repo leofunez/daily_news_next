@@ -125,6 +125,12 @@
     width: 100%;
 }
 
+.trendImageFill {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 .trendTitle {
     font-size: 17px;
     color: var(--color-white);
