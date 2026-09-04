@@ -6,10 +6,21 @@ import formatPostDate from "@/helpers/dateFormat";
 export default async function postsShaper(posts: PostResponseType[]): Promise<PostType[]> {
   const shapedPosts = await Promise.all(
     posts?.map(async function (post: PostResponseType) {
-      const category = post._embedded["wp:term"][0][0];
-      const imageObj = post._embedded["wp:featuredmedia"][0];
+      const term = post._embedded?.["wp:term"]?.[0]?.[0];
+      const featuredMedia = post._embedded?.["wp:featuredmedia"]?.[0];
       const videoField = post.ACF?.video_url ?? "";
       const subtitle = post.ACF?.subtitle ?? "";
+
+      const category = term ?? { name: '', slug: '' };
+      const imageObj = featuredMedia ?? { 
+        media_details: { 
+          sizes: { 
+            "featured-thumbnail": { source_url: '' }, 
+            "medium-thumbnail": { source_url: '' } 
+          } 
+        }, 
+        source_url: '' 
+      };
 
       return {
         id: post.id,
