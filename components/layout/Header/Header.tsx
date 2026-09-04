@@ -7,9 +7,6 @@ import styles from "./Header.module.css";
 // Types
 import type { JSX } from "react";
 
-// Helpers
-import getFormattedDateTimeWithWeather from "@/helpers/dateTimeWeather";
-
 // Constants
 import { LOGIN, SUBSCRIBE } from "@/constants";
 
@@ -20,10 +17,10 @@ import IconSearch from "@/components/icons/IconSearch";
 import Navigation from "@/components/ui/Navigation/Navigation";
 import NavigationBurger from "@/components/ui/NavigationBurger/NavigationBurger";
 import NavigationBar from "@/components/ui/NavigationBar/NavigationBar";
+import DateTimeWeather from "@/components/ui/DateTimeWeather/DateTimeWeather";
 
 export default async function Header(): Promise<JSX.Element> {
   const menuItems = await fetchWebApi.getHeaderMenu();
-  const dateTimeWeather = await getFormattedDateTimeWithWeather();
 
   return (
     <header className={styles.container}>
@@ -31,9 +28,7 @@ export default async function Header(): Promise<JSX.Element> {
       <div className={styles.headerTop}>
         <div className={`wrapper ${styles.topWrapper}`}>
           {/* Time */}
-          <p className={styles.dateTime}>
-            {dateTimeWeather}
-          </p>
+          <DateTimeWeather />
           {/* .Time */}
 
           {/* Actions */}
