@@ -2,7 +2,7 @@
 
 // Store
 import { useSelector } from 'react-redux';
-import { useGetFavoritesQuery } from "@/redux/api/favoritesApi";
+import { useGetPostsByIdsQuery } from "@/redux/api/wpApi";
 import { selectFavorites } from "@/redux/slices/favoritesSlice";
 
 // Types
@@ -22,7 +22,7 @@ export default function FavoritesPage(): JSX.Element {
     data: posts = [],
     isLoading,
     isError
-  } = useGetFavoritesQuery(favoritesIds, {
+  } = useGetPostsByIdsQuery(favoritesIds, {
     skip: favoritesIds.length === 0,
   });
 
