@@ -11,6 +11,7 @@ import styles from "./NavigationBar.module.css";
 // Components
 import Link from "next/link";
 import IconSocial from "@/components/icons/IconSocial";
+import { MAIN_URL } from "@/constants";
 
 export default async function NavigationBar(): Promise<JSX.Element> {
   const menuItems = await fetchWebApi.getAllCategories();
@@ -20,7 +21,7 @@ export default async function NavigationBar(): Promise<JSX.Element> {
     <div className={styles.container}>
       <div className={styles.menuCategories}>
         {menuItems.map((item: MenuType) => (
-          <Link key={item.id} href={item.slug ?? '/'} className={styles.menuItem}>
+          <Link key={item.id} href={item.slug ? `/${item.slug}` : '/'} className={styles.menuItem}>
             {item.name}
           </Link>
         ))}
@@ -28,7 +29,7 @@ export default async function NavigationBar(): Promise<JSX.Element> {
 
       <div className={styles.menuPages}>
         {pagesItems.map((item: MenuType) => (
-          <Link key={item.title} href={item.url} className={styles.menuItem}>
+          <Link key={item.title} href={item.url.replace(MAIN_URL, '')} className={styles.menuItem}>
             {item.title}
           </Link>
         ))}
