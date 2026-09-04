@@ -10,7 +10,6 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
     domains: ['dev-today-news.pantheonsite.io', 'secure.gravatar.com'],
     remotePatterns: [
       {
