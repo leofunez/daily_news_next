@@ -1,6 +1,9 @@
 // API
 import fetchWebApi from "@/api/fetchWebApi";
 
+// Navigation
+import { notFound } from "next/navigation";
+
 // Types
 import type { JSX } from "react";
 interface CategoryProps {
@@ -16,6 +19,9 @@ export const dynamic = 'force-dynamic';
 export default async function CategoryPage({ params }: CategoryProps): Promise<JSX.Element> {
   const { category } = await params;
   const [categoryInfo] = await fetchWebApi.getCategoryInfo(category);
+
+  if (!categoryInfo) notFound();
+
   const categoryId = categoryInfo?.id;
 
   const [categoryFeaturedPosts, categoryListPosts] = await Promise.all([
