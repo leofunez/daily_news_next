@@ -1,10 +1,11 @@
 export const SITE_URL = "https://news-today-nuxt.netlify.app";
 export const MAIN_URL = "https://dev-today-news.pantheonsite.io";
 export const APP_TITLE = "The Daily News";
+export const HOME = "Home";
 export const APP_DESCRIPTION = "Stay informed with today’s top breaking news, in-depth reports, and live updates. Get unbiased coverage on technology, culture, and global events daily.";
 export const MOST_POPULAR = "Most Popular";
 export const BREAKING_NEWS = "Breaking News";
-export const SEARCH = "Seach";
+export const SEARCH = "Search";
 export const SEARCH_RESULTS = "Results for";
 export const SEARCH_PLACEHOLDER = "Search...";
 export const LOGIN = "Login";
@@ -18,6 +19,8 @@ export const FAVORITES = "Favorites";
 export const FAVORITES_LOADING = "Loading your favorite posts...";
 export const FAVORITES_ERROR = "Failed to load favorite posts.";
 export const FAVORITES_NO = "You have no favorite posts saved.";
+export const NOT_FOUND = "Page Not Found";
+export const NOT_FOUND_TEXT = "Sorry, the page you're looking for doesn't exist or has been moved.";
 
 export const COLORS = {
     white:    "#FFFFFF",
