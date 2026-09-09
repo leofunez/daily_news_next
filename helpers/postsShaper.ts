@@ -12,14 +12,14 @@ export default async function postsShaper(posts: PostResponseType[]): Promise<Po
       const subtitle = post.ACF?.subtitle ?? "";
 
       const category = term ?? { name: '', slug: '' };
-      const imageObj = featuredMedia ?? { 
-        media_details: { 
-          sizes: { 
-            "featured-thumbnail": { source_url: '' }, 
-            "medium-thumbnail": { source_url: '' } 
-          } 
-        }, 
-        source_url: '' 
+      const imageObj = featuredMedia ?? {
+        media_details: {
+          sizes: {
+            "featured-thumbnail": { source_url: '' },
+            "medium-thumbnail": { source_url: '' }
+          }
+        },
+        source_url: ''
       };
 
       return {
