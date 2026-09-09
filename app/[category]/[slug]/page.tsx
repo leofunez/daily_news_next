@@ -1,6 +1,9 @@
 // API
 import fetchWebApi from "@/api/fetchWebApi";
 
+// Navigation
+import { notFound } from "next/navigation";
+
 // Types
 import type { JSX } from "react";
 interface PageProps {
@@ -23,6 +26,9 @@ export const dynamic = 'force-dynamic';
 export default async function PostDetailPage({ params }: PageProps): Promise<JSX.Element> {
   const { slug } = await params;
   const [postDetail] = await fetchWebApi.getPostDetail(slug);
+
+  if (!postDetail) notFound();
+
   const {
     id: postId,
     date,
