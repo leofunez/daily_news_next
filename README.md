@@ -122,3 +122,9 @@ The easiest way to deploy is the [Vercel Platform](https://vercel.com/new) from 
 ## Credits
 
 Built with Next.js and ❤ by [Leonardo Funez](https://leofunez.dev). Content served headlessly by WordPress on Pantheon.
+
+## Preview
+
+Home page: breaking-news ticker, featured stories, post grids, Most Popular rail, and footer.
+
+<img src="public/daily_news_home.jpg" alt="The Daily News home page" width="720">
