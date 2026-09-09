@@ -1,3 +1,15 @@
+# Agent Instructions for Daily News Project
+
+## Project Skills & Context
+When working on this codebase, you MUST adhere to the project-specific coding standards, architecture rules, and file patterns defined in the master skills manifest:
+
+👉 **See `.agents/SKILL.md` for full skill instructions.**
+
+### Skills Quick Index
+- **React & App Router**: Refer to `.agents/skills/react.md` for Server/Client Component rules and Redux Toolkit state.
+- **TypeScript**: Refer to `.agents/skills/ts.md` for strict typing rules and WP API data mapping.
+- **CSS Modules**: Refer to `.agents/skills/css.md` for camelCase class naming and mobile-first styles.
+
 ## 1. Project Overview & Tech Stack
 
 * **Framework:** Next.js (App Router) with TypeScript
@@ -59,7 +71,11 @@ Always use these specific commands. Do not guess or use alternative flags.
 
 ## 5. Agent Operational Guardrails
 When modifying or generating code in this repository, you MUST strictly adhere to the following rules:
-- **NO GIT COMMIT OR PUSH:** Do not attempt to run `git commit`, `git push`, or alter remote repository state. The developer handles all version control manually.
+- **NO GIT COMMIT OR PUSH:** Do not attempt to run `git commit`, `git push`, or alter remote repository state. The developer handles all version control manually. DON'T COMMIT until user approves.
+- **GIT COMMIT CONVENTIONS:** Do not commit without explicit user approval. When approved:
+  - Commit exactly **one file per commit** (never stage or commit multiple files together).
+  - Use the strict message format: `"AI / <description of commit>"`.
+  - Do not attempt to run `git push` or alter remote repository state.
 - **NO FILE DELETION:** Do not delete existing files, refactor files out of existence, or clear file contents unless explicitly instructed by the user.
 - **ASK BEFORE CRITICAL CHANGES:** Always prompt and ask for permission before executing major structural refactors, installing new package dependencies, changing core routing, or modifying global layout files (`layout.tsx`, `globals.css`).
 
