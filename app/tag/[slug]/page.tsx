@@ -1,6 +1,9 @@
 // API
 import fetchWebApi from "@/api/fetchWebApi";
 
+// Navigation
+import { notFound } from "next/navigation";
+
 // Types
 import type { JSX } from "react";
 interface CategoryProps {
@@ -16,6 +19,9 @@ export const dynamic = 'force-dynamic';
 export default async function TagPage({ params }: CategoryProps): Promise<JSX.Element> {
   const { slug } = await params;
   const [tagInfo] = await fetchWebApi.getTagInfo(slug);
+
+  if (!tagInfo) notFound();
+
   const tagId = tagInfo?.id;
 
   const [tagFeaturedPosts, tagListPosts] = await Promise.all([
